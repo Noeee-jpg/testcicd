@@ -15,7 +15,11 @@ def open_browser():
 threading.Thread(target=open_browser).start()
 
 # Definisi route untuk root
-@app.get("/")
+@app.get("/get")
+async def read_root():
+    return {"Hello": "World"}
+
+@app.get("/tes")
 async def read_root():
     return {"Hello": "World"}
 
